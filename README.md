@@ -19,7 +19,7 @@ The important files and directories of the repository is shown below
 
 Source codes provided in this repository can be used to interact with the elasticsearch cluster installed locally. 
 For more details visit [website](https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-install.html)
-But you can use their cloud deployments to do the same things. For more details regarding cloud deployments, visit [youtube](https://www.youtube.com/watch?v=CCTgroOcyfM)
+But you can use their cloud deployments to do the same things. For more details regarding cloud deployments, visit [Elasticsearch Youtube channel](https://www.youtube.com/watch?v=CCTgroOcyfM)
 
 Once elasticsearch is install, start elasticsearch cluster on port 9200
 
