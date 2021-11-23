@@ -1,7 +1,7 @@
 # Sri Lankan Politicians Search
 This repository contain source code for Sri Lankan Politicians Search engine created using Python and Elasticsearch
 
-![Python+ELasticsearch logos](Python+ELasticsearch logos.png)
+![Python+ELasticsearch logos](Python+ELasticsearchlogos.png)
 
 ## Directory Structure
 
