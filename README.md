@@ -1,0 +1,2 @@
+# SriLankanPoliticiansSearch
+Information Retrieval Project
