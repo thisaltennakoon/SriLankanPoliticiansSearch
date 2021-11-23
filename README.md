@@ -1,23 +1,17 @@
-# SriLankanPoliticiansSearch
+# Sri Lankan Politicians Search
 Information Retrieval Project
-
-This repository contain source code for Sinhala song search engine created using Python and Elasticsearch
+This repository contain source code for Sri Lankan Politicians Search engine created using Python and Elasticsearch
 
 ## Directory Structure
 
 The important files and directories of the repository is shown below
 
-    ├── song-corpus : data scraped from the [website](http://sinhalasongbook.com/)                    
-        ├── songs.json : contain the final song set 
-        ├── songs_01.json to songs_010.json : original songs scraped form the website
-        ├── songs_meta_all.json : contain all meta date related to the songs
-        └── song_link.csv : contain links to the songs url
-    ├── templates : UI related files  
-    ├── app.py : Backend of the web app created using Flask 
-    ├── data_upload.py : File to upload data to elasticsearch cluster
-    ├── scraper.py :  Source code for the data scraper  
-    ├── search.py : Search functions used to classify user search phrases and elasticsearch queries
-    ├── queries.txt :  Example queries          
+    ├── scrape.py : Contains functions used to scrape data and store the scraped data in scraped.txt  
+    ├── scraped.txt : data scraped from the [website](http://www.manthri.lk/)                      
+    ├── preprocess.py : Contains the functions used to preprocess the scraped data and store the preprocessed data in preprocessed.json
+    ├── preprocessed.json : Contains the cleaned data used to build the index
+    ├── data_upload.py : Contains functions used to upload data to elasticsearch cluster
+    ├── search.py : Conntains functions used to map user search phrases and elasticsearch queries        
 
 
 ## Starting the web app
