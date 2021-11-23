@@ -44,7 +44,7 @@ Each Politician instance contains following data fields
 14. terms_in_parliament: 2020-08-20 සිට අද දක්වා
 15. biography: තලතා අතුකෝරල මහත්මිය 1963-05-30 දින උපත ලබා ඇත.මෙතුමිය R/Ferguson උසස් පාසල, රත්නපුර ශාන්ත බිෂොප් විද්‍යාලය මියුසියස් විද්‍යාලය යන පාසල්වල අධ්යාපනය ලබා ඇත.තම ප්‍රථම උපාධිය ශ්‍රී ලංකා නීති විද්‍යාලය, කොළඹ ලබාගෙන ඇත.2020-08-20 සිට අද දක්වා සමගි ජන බලවේගය නියෝජනය කරමින් පාර්ලිමේන්තුවේ අසුන් ගෙන සිටී.
 
-## Data Scraping process
+## Data Scraping & Preprocessing process
 
 The HTML/XML parsing package BeautifulSoup was used to scrape the web pages during the data scraping process. The captured text was then put via text processing routines. This text processing unit cleans text data before passing it to the Google Translator API for Sinhala translation.
 
@@ -54,23 +54,10 @@ The HTML/XML parsing package BeautifulSoup was used to scrape the web pages duri
 
 ### Indexing and quering
 
-For indexing the data and querying the Elasticsearch is used and I have used the standard indexing methods,mapping and the analyzer provided in the Elasticsearch. When a user enters a query the related intent is identified and the search query is related to the intent is executed. The searching can be done related to any field in the index and predefined size is used which the user can override using his search query. Also filtered queries are provided where users can filter the search result. 
-
-## Advance Features                  
-* Text mining and text preprocessing
-    * Search queries are processed before intent classification, here spelling errors are corrected and the query is cleaned. Also data extracted is also cleaned and processed before displaying on the web application.
-* Intent Classification
-    * Once the query is added, intent behind the query is found by intent classification. The intent could be simple text search or a select top type, etc. The intent classifier used word tokenization and text vectorization and cosine distance to classify intentens
-* Faceted Search
-    * The search engine supported faceted search related to Genre, Artist, Composer and Lyricist. 
-* Bilingual support
-    * The search engine supports queries in both Sinhala and English. User can type queries like top 10 songs or හොඳම ගීත 10 and expect to yield the same result.
-* Synonyms support
-    * The search engine also support synonyms and that can be either in Sinhala or in English, user can type best, popular, good instead of top or හොඳ, ජනප්රිය, ප්‍රසිද්ධ instead of හොඳම. 
-* Resistant to simple spelling errors
-    * Due to the use of vectorization and distance calculation the search engine is resistant to small spelling errors and these are automatically corrected and related search results are generated.
-
-
-![search process](search.png)
-
-
+Elasticsearch has been used for creating the index and querying. Standard methods such as multi_match, match_phrase, range and aggregation have been used to support the following queries.
+* search_text("කැලණිය ධර්මාලෝක විද්‍යාලය") – simple multi-match query
+* phrase_queries("කැලණිය ධර්මාලෝක විද්‍යාලය", "school") – search the given phrase in the given field
+* faceted_search("නාලන්දා විද්‍යාලය", ["school", "first_degree", "post_grads", "terms_in_parliament", "biography"]) – search the * * * given search term while prioritizing the given fields
+* find_politicians_older_than(85) – gives the list of politicians older than the given number
+* count_by_category("district") – gives the distinct categories with politician count
+* top_n_politicians(10, "district", "රත්නපුර දිස්ත්‍රික්කය") – gives top n politicians while considering the given filed
