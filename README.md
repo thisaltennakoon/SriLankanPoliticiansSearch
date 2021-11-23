@@ -58,6 +58,6 @@ Elasticsearch has been used for creating the index and querying. Standard method
 * search_text("කැලණිය ධර්මාලෝක විද්‍යාලය") – simple multi-match query
 * phrase_queries("කැලණිය ධර්මාලෝක විද්‍යාලය", "school") – search the given phrase in the given field
 * faceted_search("නාලන්දා විද්‍යාලය", ["school", "first_degree", "post_grads", "terms_in_parliament", "biography"]) – search the given search term while prioritizing the given fields
-* find_politicians_older_than(85) – gives the list of politicians older than the given number
+* find_politicians_older_than(85) – gives the list of politicians older than the given number(age)
 * count_by_category("district") – gives the distinct categories with politician count
 * top_n_politicians(10, "district", "රත්නපුර දිස්ත්‍රික්කය") – gives top n politicians while considering the given filed
