@@ -11,55 +11,38 @@ The important files and directories of the repository is shown below
     ├── preprocess.py : Contains the functions used to preprocess the scraped data and store the preprocessed data in preprocessed.json
     ├── preprocessed.json : Contains the cleaned data used to build the index
     ├── data_upload.py : Contains functions used to upload data to elasticsearch cluster
-    ├── search.py : Conntains functions used to map user search phrases and elasticsearch queries        
+    ├── search.py : Contains functions used to map user search phrases and elasticsearch queries        
 
 
-## Starting the web app
+## Starting the search app
 
-### Spinning the elasticsearch cluster
+### Starting the elasticsearch cluster
 
-You can install elasticsearch locally or otherwise and spin up the elasticsearch cluster
+Source codes provided in this repository can be used to interact with the elasticsearch cluster installed locally. 
 For more details visit [website](https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-install.html)
+But you can use their cloud deployments to do the same things. For more details regarding cloud deployments, visit [youtube](https://www.youtube.com/watch?v=CCTgroOcyfM)
 
 Once elasticsearch is install, start elasticsearch cluster on port 9200
 
-### Getting started with the web app
-
-```commandline
-git clone https://github.com/iTharindu/SinhalaSongSearch.git
-
-cd Sinhala Songs Search
-
-virtualenv -p python3 envname
-
-source env/bin/activate
-
-pip3 install -r requirements.txt
-
-python app.py
-```
-
-### To run the web scraper
-
-Follow the above steps but instead of `python app.py` run `scraper.py`
-
 ## Data fields 
 
-Each song contain subset of following data fields
+Each Politician instance contains following data fields
 
-1. Title (both in Sinhala and English letters) 
-2. Artist - English
-3. Artist - Sinhala
-4. Composer - English
-5. Composer - Sinhala
-6. Lyricist - English
-7. Lyricist - Sinhala
-8. Genre - English
-9. Genre - Sinhala
-10. Number of views
-11. Guitar keys
-12. Name of the movie (if the song is based on a movie)
-13. Lyrics
+1. name: තලතා අතුකෝරල
+2 .position: පාර්ලිමේන්තු මන්ත්‍රී
+3 .party: සමගි ජන බලවේගය
+4 .district: රත්නපුර දිස්ත්‍රික්කය
+5 .contact_information: ['452274287', 'atukorale_t@parliament.lk']
+6. overall_rank: 24
+7. participated_in_parliament: 13
+8. related_subjects: ['අයිතිවාසිකම් හා නියෝජනය', 'යුක්තිය, ආරක්ෂාව හා මහජන සාමය', 'අධ්\u200dයාපන', 'ආණ්ඩුකරණ, පරිපාලන හා පාර්ලිමේන්තු කටයුතු', 'ආර්ථික හා මුල්\u200dය']
+9. date_of_birth: 1963-05-30
+10. gender: ස්ත්‍රී
+11. school: ['R/Ferguson උසස් පාසල, රත්නපුර', 'ශාන්ත බිෂොප් විද්\u200dයාලය', 'මියුසියස් විද්\u200dයාලය']
+12. first_degree: ශ්‍රී ලංකා නීති විද්‍යාලය, කොළඹ
+13. post_grads:
+14. terms_in_parliament: 2020-08-20 සිට අද දක්වා
+15. biography: තලතා අතුකෝරල මහත්මිය 1963-05-30 දින උපත ලබා ඇත.මෙතුමිය R/Ferguson උසස් පාසල, රත්නපුර ශාන්ත බිෂොප් විද්‍යාලය මියුසියස් විද්‍යාලය යන පාසල්වල අධ්යාපනය ලබා ඇත.තම ප්‍රථම උපාධිය ශ්‍රී ලංකා නීති විද්‍යාලය, කොළඹ ලබාගෙන ඇත.2020-08-20 සිට අද දක්වා සමගි ජන බලවේගය නියෝජනය කරමින් පාර්ලිමේන්තුවේ අසුන් ගෙන සිටී.
 
 ## Data Scraping process
 
