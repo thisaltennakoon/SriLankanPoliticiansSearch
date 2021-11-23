@@ -28,10 +28,10 @@ Once elasticsearch is install, start elasticsearch cluster on port 9200
 Each Politician instance contains following data fields
 
 1. name: තලතා අතුකෝරල
-2 .position: පාර්ලිමේන්තු මන්ත්‍රී
-3 .party: සමගි ජන බලවේගය
-4 .district: රත්නපුර දිස්ත්‍රික්කය
-5 .contact_information: ['452274287', 'atukorale_t@parliament.lk']
+2. position: පාර්ලිමේන්තු මන්ත්‍රී
+3. party: සමගි ජන බලවේගය
+4. district: රත්නපුර දිස්ත්‍රික්කය
+5. contact_information: ['452274287', 'atukorale_t@parliament.lk']
 6. overall_rank: 24
 7. participated_in_parliament: 13
 8. related_subjects: ['අයිතිවාසිකම් හා නියෝජනය', 'යුක්තිය, ආරක්ෂාව හා මහජන සාමය', 'අධ්\u200dයාපන', 'ආණ්ඩුකරණ, පරිපාලන හා පාර්ලිමේන්තු කටයුතු', 'ආර්ථික හා මුල්\u200dය']
