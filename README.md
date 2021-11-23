@@ -46,9 +46,9 @@ Each Politician instance contains following data fields
 
 ## Data Scraping process
 
-The process with scraping data from the site, the HTML/XML parsing library BeautifulSoup was used for scraping the web pages. Then the text extracted was passed through the text processing unit. Both simple techniques like replacing complex methods like regex are used for this process. This text processing unit generates cleaned text data which is then passed to the translator to translate to Sinhala, here both translation and transliteration takes place. Then the translated data is sent for post processing and the final data set with an aggregated dataset containing information about fields is generated
+The HTML/XML parsing package BeautifulSoup was used to scrape the web pages during the data scraping process. The captured text was then put via text processing routines. This text processing unit cleans text data before passing it to the Google Translator API for Sinhala translation.
 
-![Scraping process](scraper.png)
+![Scraping process](preprocessing.png)
 
 ## Search Process
 
